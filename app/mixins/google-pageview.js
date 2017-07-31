@@ -10,7 +10,7 @@ export default Ember.Mixin.create({
     var page = page ? page : this.get('url');
     var title = title ? title : this.get('url');
 
-    if (Ember.get(ENV, 'googleAnalytics.webPropertyId') != null) {
+    if (Ember.get(ENV, 'googleAnalytics.webPropertyId') != null && typeof FastBoot === 'undefined') {
       var trackerType = Ember.getWithDefault(ENV, 'googleAnalytics.tracker', 'analytics.js');
 
       if (trackerType === 'analytics.js') {
